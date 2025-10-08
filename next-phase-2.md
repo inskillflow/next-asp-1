@@ -27,11 +27,38 @@
 <h1 id="sec-phase2">Phase 2 — Intégration des pages web</h1>
 
 <h2 id="sec-intro2">1 – Introduction & livrables</h2>
-Objectif : **intégrer des pages Next.js** correspondant **1:1** aux endpoints de la Phase 1 pour lister, créer, consulter, modifier et supprimer chaque ressource.  
-**Livrables obligatoires** (mention de l’énoncé) :  
-- Intégrer les pages web correspondant aux endpoints API.  
-- Inclure dans le projet : **`layout.tsx`**, **`page.module.css`**, **`page.tsx`** (racine).  
-**Contraintes** : pas d’auth à cette étape (tout public). Préparer la navigation et des hooks qui **supporteront** l’auth/roles en Phase 3 **sans changer les URLs**.
+
+
+<h1 id="sec-phase2">Phase 2 — Intégration des pages web</h1>
+
+<h2 id="sec-intro2">1 – Introduction & livrables</h2>
+
+<p>
+<strong>Objectif :</strong> intégrer les pages <strong>Next.js</strong> correspondant <strong>1:1</strong> aux endpoints de la Phase 1 afin de lister, créer, consulter, modifier et supprimer chaque ressource.
+</p>
+
+<p>
+<strong>Livrables obligatoires</strong> (mention de l’énoncé) :
+</p>
+
+<ul>
+  <li>Intégrer les pages web correspondant aux endpoints API définis en Phase 1.</li>
+  <li>Inclure dans le projet les fichiers suivants :
+    <ul>
+      <li><code>layout.tsx</code></li>
+      <li><code>page.module.css</code></li>
+      <li><code>page.tsx</code> (racine)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>
+<strong>Contraintes :</strong> aucune authentification à cette étape (tout public).  
+Préparer néanmoins la navigation et les hooks qui supporteront l’authentification et la gestion des rôles en Phase 3, <strong>sans changer les URLs</strong>.
+</p>
+
+<br/>
+
 
 <h2 id="sec-archi2">2 – Arborescence & routing (App Router)</h2>
 
