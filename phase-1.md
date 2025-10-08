@@ -1,7 +1,3 @@
-ok, on respire 😅 — voilà **Phase 1** en **même style**, **ultra-exhaustive**, avec **UNE GROSSE TABLE récap des endpoints tout en haut** (avant les sections), **ancres HTML stables**, et **100% compatible avec ta Phase 3** (mêmes URLs/payloads; tu ajouteras 401/403 plus tard).
-
----
-
 # Phase 1 — Développement des APIs (Next.js + Prisma/PostgreSQL)
 
 <ul>
@@ -24,6 +20,11 @@ ok, on respire 😅 — voilà **Phase 1** en **même style**, **ultra-exhaustiv
   <li><a href="#sec-openapi">7 – OpenAPI (extrait prêt à coller)</a></li>
   <li><a href="#sec-compat">8 – Compatibilité Phase 3 (ajout auth/rôles sans casser)</a></li>
 </ul>
+
+
+<br/>
+<br/>
+
 
 <h1 id="sec-phase1">Phase 1 — Développement des APIs</h1>
 
@@ -60,6 +61,8 @@ ok, on respire 😅 — voilà **Phase 1** en **même style**, **ultra-exhaustiv
 
 
 
+<br/>
+<br/>
 
 <h2 id="sec-conventions">2 – Conventions HTTP (communes)</h2>
 
@@ -75,6 +78,10 @@ JSON, pagination `page/size`, tri `sort=field:asc|desc`, dates ISO-UTC, 2xx cons
 * **Erreurs Phase 1** : `400/409/422/404/500`.
 * **Compat Phase 3** : on ajoutera `401 Unauthorized` / `403 Forbidden` **sans changer** les URLs ni les payloads.
 
+
+
+<br/>
+<br/>
 
 
 <h2 id="sec-endpoints">3 – Endpoints (détails, I/O & liens)</h2>
@@ -404,6 +411,8 @@ JSON, pagination `page/size`, tri `sort=field:asc|desc`, dates ISO-UTC, 2xx cons
 
 
 
+<br/>
+<br/>
 
 
 <h2 id="sec-schemas">4 – Schémas de données (types de réponse)</h2>
@@ -432,6 +441,9 @@ JSON, pagination `page/size`, tri `sort=field:asc|desc`, dates ISO-UTC, 2xx cons
 { "id":"uuid","courseId":"uuid","studentId":"uuid","enrollmentDate":"ISO-UTC","status":"Active|Completed|Cancelled","grade":85.5,"createdAt":"ISO-UTC" }
 ````
 
+<br/>
+<br/>
+
 
 <h2 id="sec-validation">5 – Règles de validation (résumé)</h2>
 
@@ -441,8 +453,9 @@ JSON, pagination `page/size`, tri `sort=field:asc|desc`, dates ISO-UTC, 2xx cons
 - **Enrollment** : (`courseId`,`studentId`) requis & **unique** · `status` ∈ {Active,Completed,Cancelled} · `grade` 0..100 (optionnelle).
 
 
+<br/>
+<br/>
 
-<h2 id="sec-errors">6 – Erreurs & format commun</h2>
 
 
 <h2 id="sec-errors">6 – Erreurs &amp; format commun</h2>
@@ -542,6 +555,8 @@ Codes usuels : **422** validation · **409** conflit (email/enrollment) · **404
 
 
 
+<br/>
+<br/>
 
 
 
@@ -956,6 +971,9 @@ components:
 
 *(Tu peux importer cet extrait dans Swagger UI/Redoc directement. Il couvre **toutes** les ressources + health, avec paramètres communs, schémas, et réponses.)*
 
+
+<br/>
+<br/>
 
 
 <h2 id="sec-compat">8 – Compatibilité Phase 3 (ajout auth/rôles sans casser)</h2>
