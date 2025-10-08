@@ -68,93 +68,147 @@ app/
 
 <br/>
 
+
+
+
+
+
+
+
 <h2 id="sec-pages2">3 – Pages à livrer (exhaustif, liens & I/O)</h2>
 
-> Notation : **GET** = lecture ; **POST** = création ; **PUT** = maj ; **DELETE** = suppression. Les **actions** déclenchent les appels API correspondants.
+<p><strong>Notation :</strong> <code>GET</code> = lecture ; <code>POST</code> = création ; <code>PUT</code> = mise à jour ; <code>DELETE</code> = suppression.  
+Les <strong>actions</strong> déclenchent les appels API correspondants.</p>
+
+<hr/>
 
 <h3 id="sec-courses-pages">3.1 Courses</h3>
 
 <h4 id="p-courses-list">/courses — Liste</h4>
-- **Affiche** la table paginée des cours (title, level, price, instructorId, createdAt).  
-- **Actions** : Lien **Détail**, **Éditer**, **Supprimer**, bouton **Créer**.  
-- **API** : `GET /api/courses?page=&size=&sort=&level=&instructorId=&priceMin=&priceMax`  
-- **Erreurs** : afficher un bandeau si `500`.
+<ul>
+  <li><strong>Affiche</strong> la table paginée des cours (<code>title</code>, <code>level</code>, <code>price</code>, <code>instructorId</code>, <code>createdAt</code>).</li>
+  <li><strong>Actions :</strong> liens <strong>Détail</strong>, <strong>Éditer</strong>, <strong>Supprimer</strong>, bouton <strong>Créer</strong>.</li>
+  <li><strong>API :</strong> <code>GET /api/courses?page=&size=&sort=&level=&instructorId=&priceMin=&priceMax</code></li>
+  <li><strong>Erreurs :</strong> afficher un bandeau si <code>500</code>.</li>
+</ul>
 
 <h4 id="p-courses-create">/courses/create — Créer</h4>
-- **Form** → `POST /api/courses` (title, description, instructorId, duration, maxStudents, price, level).  
-- **Validation client** (mêmes règles que Phase 1).  
-- **Succès** : redirection vers **/courses** + toast « Course created ».  
-- **Erreurs** : `422/409` (montrer messages), `500`.
+<ul>
+  <li><strong>Formulaire :</strong> <code>POST /api/courses</code> (<code>title</code>, <code>description</code>, <code>instructorId</code>, <code>duration</code>, <code>maxStudents</code>, <code>price</code>, <code>level</code>).</li>
+  <li><strong>Validation client :</strong> mêmes règles que la Phase 1.</li>
+  <li><strong>Succès :</strong> redirection vers <code>/courses</code> + message « Course created ».</li>
+  <li><strong>Erreurs :</strong> <code>422</code> / <code>409</code> (afficher les messages), <code>500</code>.</li>
+</ul>
 
 <h4 id="p-courses-detail">/courses/{id} — Détail</h4>
-- **API** : `GET /api/courses/{id}`.  
-- **Affiche** tous les champs.  
-- **Actions** : **Éditer**, **Supprimer**, **Retour**.
+<ul>
+  <li><strong>API :</strong> <code>GET /api/courses/{id}</code>.</li>
+  <li><strong>Affiche</strong> tous les champs du cours sélectionné.</li>
+  <li><strong>Actions :</strong> <strong>Éditer</strong>, <strong>Supprimer</strong>, <strong>Retour</strong>.</li>
+</ul>
 
 <h4 id="p-courses-edit">/courses/{id}/edit — Modifier</h4>
-- **Form** préremplie → `PUT /api/courses/{id}`.  
-- **Succès** : retour page détail.  
-- **Erreurs** : `422/404/409/500`.
+<ul>
+  <li><strong>Formulaire préremplie :</strong> <code>PUT /api/courses/{id}</code>.</li>
+  <li><strong>Succès :</strong> retour vers la page de détail.</li>
+  <li><strong>Erreurs :</strong> <code>422</code> / <code>404</code> / <code>409</code> / <code>500</code>.</li>
+</ul>
 
 <hr/>
 
 <h3 id="sec-instructors-pages">3.2 Instructors</h3>
 
 <h4 id="p-instructors-list">/instructors — Liste</h4>
-- **API** : `GET /api/instructors?page=&size=&sort=&email=&specialty`.  
-- **Actions** : Détail / Éditer / Supprimer / Créer.
+<ul>
+  <li><strong>API :</strong> <code>GET /api/instructors?page=&size=&sort=&email=&specialty</code>.</li>
+  <li><strong>Actions :</strong> <strong>Détail</strong>, <strong>Éditer</strong>, <strong>Supprimer</strong>, <strong>Créer</strong>.</li>
+</ul>
 
 <h4 id="p-instructors-create">/instructors/create — Créer</h4>
-- **Form** → `POST /api/instructors`.  
-- Gérer `422/409`.
+<ul>
+  <li><strong>Formulaire :</strong> <code>POST /api/instructors</code>.</li>
+  <li><strong>Erreurs :</strong> <code>422</code> / <code>409</code>.</li>
+</ul>
 
 <h4 id="p-instructors-detail">/instructors/{id} — Détail</h4>
-- **API** : `GET /api/instructors/{id}`.
+<ul>
+  <li><strong>API :</strong> <code>GET /api/instructors/{id}</code>.</li>
+</ul>
 
 <h4 id="p-instructors-edit">/instructors/{id}/edit — Modifier</h4>
-- **Form** → `PUT /api/instructors/{id}`.
+<ul>
+  <li><strong>Formulaire :</strong> <code>PUT /api/instructors/{id}</code>.</li>
+</ul>
 
 <hr/>
 
 <h3 id="sec-students-pages">3.3 Students</h3>
 
 <h4 id="p-students-list">/students — Liste</h4>
-- **API** : `GET /api/students?page=&size=&sort=&email=&level`.
+<ul>
+  <li><strong>API :</strong> <code>GET /api/students?page=&size=&sort=&email=&level</code>.</li>
+</ul>
 
 <h4 id="p-students-create">/students/create — Créer</h4>
-- **Form** → `POST /api/students`.
+<ul>
+  <li><strong>Formulaire :</strong> <code>POST /api/students</code>.</li>
+</ul>
 
 <h4 id="p-students-detail">/students/{id} — Détail</h4>
-- **API** : `GET /api/students/{id}`.
+<ul>
+  <li><strong>API :</strong> <code>GET /api/students/{id}</code>.</li>
+</ul>
 
 <h4 id="p-students-edit">/students/{id}/edit — Modifier</h4>
-- **Form** → `PUT /api/students/{id}`.
+<ul>
+  <li><strong>Formulaire :</strong> <code>PUT /api/students/{id}</code>.</li>
+</ul>
 
 <hr/>
 
 <h3 id="sec-enrollments-pages">3.4 Enrollments</h3>
 
 <h4 id="p-enrollments-list">/enrollments — Liste</h4>
-- **API** : `GET /api/enrollments?page=&size=&sort=&status=&courseId=&studentId`.  
-- Afficher `status`, `grade`, `courseId`, `studentId`.
+<ul>
+  <li><strong>API :</strong> <code>GET /api/enrollments?page=&size=&sort=&status=&courseId=&studentId</code>.</li>
+  <li><strong>Affiche :</strong> <code>status</code>, <code>grade</code>, <code>courseId</code>, <code>studentId</code>.</li>
+</ul>
 
 <h4 id="p-enrollments-create">/enrollments/create — Créer</h4>
-- **Form** → `POST /api/enrollments` (courseId, studentId, status, grade?).  
-- **Tip** : autosuggest course/student (petit select alimenté par `/api/courses?size=50`, `/api/students?size=50`).
+<ul>
+  <li><strong>Formulaire :</strong> <code>POST /api/enrollments</code> (<code>courseId</code>, <code>studentId</code>, <code>status</code>, <code>grade?</code>).</li>
+  <li><strong>Astuce :</strong> autosuggest pour cours/étudiant (via <code>/api/courses?size=50</code> et <code>/api/students?size=50</code>).</li>
+</ul>
 
 <h4 id="p-enrollments-detail">/enrollments/{id} — Détail</h4>
-- **API** : `GET /api/enrollments/{id}`.
+<ul>
+  <li><strong>API :</strong> <code>GET /api/enrollments/{id}</code>.</li>
+</ul>
 
 <h4 id="p-enrollments-edit">/enrollments/{id}/edit — Modifier</h4>
-- **Form** → `PUT /api/enrollments/{id}` (status/grade).
+<ul>
+  <li><strong>Formulaire :</strong> <code>PUT /api/enrollments/{id}</code> (<code>status</code>, <code>grade</code>).</li>
+</ul>
 
 <hr/>
 
 <h3 id="sec-health-page">3.5 Health</h3>
 
 <h4 id="p-health">/health — Statut</h4>
-- **API** : `GET /api/health`  
-- Afficher badge **ok** / **degraded** + horodatage.
+<ul>
+  <li><strong>API :</strong> <code>GET /api/health</code>.</li>
+  <li><strong>Affiche :</strong> badge <code>ok</code> / <code>degraded</code> + horodatage.</li>
+</ul>
+
+<br/>
+
+
+
+
+
+
+
+
 
 <br/>
 
